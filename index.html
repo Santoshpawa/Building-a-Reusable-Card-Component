@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+</html>
+<script type="text/babel">
+
+    function Card({ title, children }) {
+        return (
+            <div style={{ border: "1px solid", margin: "20px", borderRadius: "5px", width: "80%", textAlign: "center", padding: "10px" }}>
+                <h2>{title}</h2>
+                <div>{children}</div>
+            </div>
+        )
+    }
+
+    function App() {
+        return (
+            <>
+                <Card title="Card 1">
+                    <p>This is card 1 details.</p>
+                </Card>
+                <Card title="Card 2: Unordered List">
+                    <ul style={{ listStylePosition: "inside" }}>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                    </ul>
+                </Card>
+                <Card title="Card 3: Button">
+                    <button>Card 3</button>
+                </Card>
+            </>
+        )
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />)
+</script>
